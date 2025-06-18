@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      font-size: 22px;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: orange;
+      font-size: 2.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    nav a:hover {
+      color: orange;
+    }
+
+    section {
+      padding: 120px 20px;
+      min-height: 100vh;
+    }
+
+    .home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      text-align: center;
+    }
+
+    .home img {
+      width: 220px;
+      height: 300px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 3px solid orange;
+      
+    }
+
+    .home h2 {
+      font-size: 3rem;
+      color: orange;
+      margin-top: 0.5rem;
+    }
+
+    .home p {
+      font-size: 1.7rem;
+    }
+
+    .home .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .home .social-icons a {
+      color: orange;
+      border: 2px solid orange;
+      border-radius: 50%;
+      padding: 0.5rem;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    .home .social-icons a:hover {
+      background-color: orange;
+      color: #000;
+    }
+
+    .about, .skills, .projects, .resume, .education, .contact {
+      background-color: #111;
+    }
+
+    h3 {
+      color: orange;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+
+    .card h4 {
+      color: orange;
+      margin-bottom: 0.7rem;
+      font-size: 1.6rem;
+    }
+
+    .resume a {
+      background-color: orange;
+      color: black;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin: auto;
+      font-size: 1.3rem;
+    }
+
+    .education-item {
+  background-color: black;
+  color: white;
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 600px;
+}
+
+.education-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: orange;
+  text-align: center;
+}
+
+.education-item p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea {
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .contact button {
+      padding: 0.9rem;
+      background-color: orange;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .contact-email {
+      text-align: center;
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-email a {
+      color: orange;
+      text-decoration: none;
+    }
+
+    .contact-email a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: orange;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <img src="IMG-20250522-WA0006.jpg" alt="Harini Photo">
+    <h2>Harini</h2>
+    <p>Web Developer & Java Backend Developer</p>
+    <div class="social-icons">
+      <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h3>About Me</h3>
+    <div class="card-container">
+      <div class="card">
+        <p>I am a passionate and self-motivated Computer Science student with a strong foundation in Java, HTML, CSS, and Python. I am committed to continuous learning and staying up-to-date with evolving technologies and industry standards. With a keen interest in building real-world applications, I strive to apply my technical skills to develop efficient, user-focused software solutions that make a meaningful impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h3>Skills</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>HTML & CSS</h4>
+        <p>Building responsive and structured webpages.</p>
+      </div>
+      <div class="card">
+        <h4>Java</h4>
+        <p>Proficient in object-oriented programming and backend development using Java.</p>
+      </div>
+      <div class="card">
+        <h4>JavaScript</h4>
+        <p>Creating interactive and dynamic user interfaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h3>Projects</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>Garbage Management System</h4>
+        <p>I developed a Smart Garbage Management System using an ultrasonic sensor to measure the bin’s fill level in real-time. The status is displayed on an LCD screen for easy monitoring, enabling timely and efficient waste collection.</p>
+      </div>
+      <div class="card">
+        <h4>Intent Recognition for Virtual Assistants</h4>
+        <p>Designed and implemented an Intent Recognition System for virtual assistants using NLP and machine learning to accurately classify and understand user queries.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="resume">
+    <h3>Resume</h3>
+    <div style="text-align: center">
+      <a href="https://drive.google.com/file/d/1T0zXQMBbD9js5EQqGo-YSwi_h5dCpneD/view?usp=drive_link" target="_blank">View Resume</a>
+    </div>
+  </section>
+<section id="education">
+    <h2 style="color: orange; text-align: center;">Education</h2>
+    <div class="education-item">
+      <h3>BE - Computer Science and Engineering</h3>
+      <p>Panimalar Engineering College, CGPA: 8.30</p>
+      <p>Year: 2022-2026</p>
+    </div>
+    <div class="education-item">
+      <h3>12th Grade - Bio Maths</h3>
+      <p>Chellammal Matriculation Higher Secondary School, 85.7%</p>
+      <p>Year: 2022</p>
+    </div>
+    <div class="education-item">
+      <h3>SSLC / 10th Grade</h3>
+      <p>Chellammal Matriculation Higher Secondary School, 89.4%</p>
+      <p>Year: 2020</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h3>Contact Me</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <ul class="contact-email">
+      <li><a href="mailto:hariniramesh0414@gmail.com"><i class="fas fa-envelope"></i> hariniramesh0414@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Harini &copy; 2025</p>
+  </footer>
+</body>
+</html>
